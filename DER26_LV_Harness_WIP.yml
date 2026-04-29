@@ -1,0 +1,784 @@
+# DER26 - All TSAL references updated to RTM
+
+# 04/29/2026 - Need to update CANbus & 12V connections on HVBOX and then done?
+
+connectors:
+  ECU:
+    # needs to change - RTD turned to GPOUT_1 - done
+    type: Deutsch Leavyseal
+    subtype: Female
+    mpn: 1-1823498-1
+    manufacturer: TE Connectivity
+    pinlabels: [APPS 2, APPS 1, Brake Pressure Sensor 2, Brake Pressure Sensor 1, 5V, GND, 5V, GND, Cooling Flow Meter, Cooling Pressure Sensor, Thermocoupler 2, Thermocoupler 1, IMD Fail Signal, GLV Active Signal, AMS Fail Signal, TS Active Signal, UART N, UART P, GPOUT_1, SSA, 12V, 5V, GND, Spare, 12V, Buzzer Return, 12V, Brake Light Return, I2C SDA, I2C SCL, Pump PWM, TSS Red Light, TSS Green Light, 12V, CAN L, CAN H, Spare, Misc IO 3, Misc IO 2, Misc IO 1, Cascadia On, Ok From Cascadia, Cascadia Enable, Fail From Cascadia, GND, 12V, CAN L, CAN H, RTM HV Signal, AIR Control Out, AIR Control In, GND, Hall Effect Sensor Output, BMS Ok, IMD Ok, 12V, GND, GND, GND, 12V Input Unfused, Fan 2 Fused 12V, Fan 1 Fused 12V]
+    hide_disconnected_pins: True
+    notes: Crimps 1-968855-1 and 1241380-1
+    image: 
+      src: 1-1823498-1.png
+      width: 100
+  AMS:
+    # needs to change - done
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-12SA-P012
+    manufacturer: TE Connectivity
+    pinlabels: [GND, 12V In, C Sense L, Can L, BMS Safety, Can H, AIR Control, IMD Status, RTM Light POS, HV Active, RTM Light NEG, Spare]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-12SA-P012.png
+      width: 100
+  RTM-Light: # new - do we need wireharness for this if its in front panel? - doing it anyways
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-3Ss
+    manufacturer: TE Connectivity
+    pins: [A, B, C, D, E, F]
+    pinlabels: [RTM Light NEG, RTM Light POS, HV Active, LV Precharge, 12V, GND]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-3Ss.png
+      width: 100
+  APPS1:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-3Ss
+    manufacturer: TE Connectivity
+    pins: [A, B, C]
+    pinlabels: [APPS1, GND, 5V]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-3Ss.png
+      width: 100
+  APPS2:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-3Ss
+    manufacturer: TE Connectivity
+    pins: [A, B, C]
+    pinlabels: [APPS2, GND, 5V]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-3Ss.png
+      width: 100
+  BRAKEPRESSURE1:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-3Ss
+    manufacturer: TE Connectivity
+    pins: [A, B, C]
+    pinlabels: [Brake Sensor 1, GND, 5V]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-3Ss.png
+      width: 100
+  BRAKEPRESSURE2:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-3Ss
+    manufacturer: TE Connectivity
+    pins: [A, B, C]
+    pinlabels: [Brake Sensor 2, GND, 5V]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-3Ss.png
+      width: 100
+  COOLINGFLOW:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-3Ss
+    manufacturer: TE Connectivity
+    pins: [A, B, C]
+    pinlabels: [Cooling Flow Meter, GND, 5V]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-3Ss.png
+      width: 100
+  COOLINGPRESSURE:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-3Ss
+    manufacturer: TE Connectivity
+    pins: [A, B, C]
+    pinlabels: [Cooling Pressure Sensor, GND, 5V]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-3Ss.png
+      width: 100
+  COOLINGTEMP1:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-3Ss
+    manufacturer: TE Connectivity
+    pins: [A, B, C]
+    pinlabels: [Thermistor 1, GND, 5V]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-3Ss.png
+      width: 100
+  COOLINGTEMP2:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-3Ss
+    manufacturer: TE Connectivity
+    pins: [A, B, C]
+    pinlabels: [Thermistor 2, GND, 5V]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-3Ss.png
+      width: 100
+  RTM_LED: # new
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-2S-C015
+    manufacturer: TE Connectivity
+    pinlabels: [RTM Light POS, RTM Light NEG]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-2S-C015.png
+      width: 100
+  TSS_LED_RED: # new
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-2S-C015
+    manufacturer: TE Connectivity
+    pinlabels: [TSS Red Light, 12V]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-2S-C015.png
+      width: 100
+  TSS_LED_GREEN: # new
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-2S-C015
+    manufacturer: TE Connectivity
+    pinlabels: [TSS Red Light, 12V]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-2S-C015.png
+      width: 100
+  BUZZER:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-2S-C015
+    manufacturer: TE Connectivity
+    pinlabels: [12V, Return]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-2S-C015.png
+      width: 100
+  BRAKELIGHT:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-2S-C015
+    manufacturer: TE Connectivity
+    pinlabels: [12V, Return]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-2S-C015.png
+      width: 100
+  MOTORCONTROLLER:
+    type: CMC 54320
+    subtype: Female
+    mpn: 0643203319
+    manufacturer: Molex
+    pins: [A1, A2, A3, A4, B1, B2, B3, B4, C1, C2, C3, C4, D1, D2, D3, D4, E1, E2, E3, E4, F1, F2, F3, F4, G1, G2, G3, G4, H1, H2, H3, H4, J1, J2, J3, J4, K1, K2, K3, K4, L1, L2, L3, L4, M1, M2, M3, M4]
+    pinlabels: [SIN, CANA_H, RTD1P, AGND, SIN, CANA_L, RTD1N, AIN1, COS, CANA_T, RTD2P, AIN2, COS, CAN_GND, RTD2N, AIN3, EXC, CANB_T, DIN1, AIN4, EXC, CANB_H, DIN2, RS232_GND, GND, CANB_L, DIN3, RS232_RXD, ENC_A, PROG, DIN4, RS232_TXD, ENC_B, ENC_PWR, HVIL_IN, HVIL_OUT, ENC_Z, DGND, XDCR_PWR, AGND, RLY1, RLY2, RLY3, RLY4, KL30_BATT, KL15, KL15_EN, KL31_GND]
+    show_pincount: False
+    hide_disconnected_pins: True
+    notes: Crimps 0643231029 and 0643221019
+    image: 
+      src: 0643203319.png
+      width: 100
+  MOTORENCODER:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-6S-C015
+    manufacturer: TE Connectivity
+    pins: [Red, Black, Yellow, Blue, Red/ White, Black/ White]
+    pinlabels: [SIN+, SIN-, COS+, COS-, EXC_OUTPUT, EXC_RETURN]
+    show_pincount: False
+    hide_disconnected_pins: True
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-6S-C015.png
+      width: 100
+  GLVBATTERY:
+    type: 12V Litium Iron Phosphate Battery
+    subtype: Custom Adapter
+    pinlabels: [12V, GND]
+    notes: Crimps Ring Terminals + M5*8 Screw + M5 Nut
+    image: 
+      src: LFX18L1-BS12.png
+      width: 100
+  GLVMS:
+    type: Master Switch
+    subtype: Custom Adapter
+    pinlabels: [12V In, 12V Out]
+    notes: Crimps Ring Terminals
+    image: 
+      src: 4431.png
+      width: 100
+  MOTORENCODERINTERLOCK:
+    type: Deutsch DT
+    subtype: Female
+    pinlabels: [AIR Control In, AIR Control Out]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-2S-C015.png
+      width: 100
+  TSMS:
+    type: Master Switch
+    subtype: Custom Adapter
+    pinlabels: [AIR Control In, AIR Control Out]
+    notes: Crimps Ring Terminals
+    image: 
+      src: 4431.png
+      width: 100
+  INERTIASWITCH:
+    type: First Inertia Switch
+    subtype: Custom Adapter
+    pinlabels: [AIR Control In, AIR Control Out]
+    notes: Crimps Soldering Splice
+    image: 
+      src: First Inertia Switch.png
+      width: 100
+  COCKPITSHUTDOWN:
+    type: OMRON
+    subtype: Custom Adapter
+    mpn: OMRON A22-01
+    pinlabels: [AIR Control In, AIR Control Out]
+    notes: Crimps Spade Connector
+    image: 
+      src: OMRON A22-01.png
+      width: 100
+  BOTS:
+    type: BaoLian
+    subtype: Custom Adapter
+    pinlabels: [AIR Control In, AIR Control Out]
+    notes: Crimps Spade Connector
+    image: 
+      src: BaoLian Green Micro Switch.png
+      width: 100
+  RIGHTSHUTDOWN:
+    type: OMRON
+    mpn: OMRON A22-01
+    pinlabels: [AIR Control In, AIR Control Out]
+    notes: Crimps Spade Connector
+    image: 
+      src: OMRON A22-01.png
+      width: 100
+  LEFTSHUTDOWN:
+    type: OMRON
+    mpn: OMRON A22-01
+    pinlabels: [AIR Control In, AIR Control Out]
+    notes: Crimps Spade Connector
+    image: 
+      src: OMRON A22-01.png
+      width: 100
+  HVBOX: # NEEDS TO HAVE CONNECTIONS UPDATED
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-6S-C015
+    pinlabels: [GND, 12V Unfused, Input Interlock, Output Interlock, CAN L, CAN H]
+    hide_disconnected_pins: True
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-6S-C015.png
+      width: 100
+  ACCUMULATORINTERLOCK:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-2S-C015
+    pinlabels: [AIR Control In, AIR Control Out]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-2S-C015.png
+      width: 100
+  FAN1:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-2S-C015
+    manufacturer: TE Connectivity
+    pinlabels: [12V, GND]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-2S-C015.png
+      width: 100
+  FAN2:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-2S-C015
+    manufacturer: TE Connectivity
+    pinlabels: [12V, GND]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-2S-C015.png
+      width: 100
+  COOLINGPUMP:
+    type: Deutsch DT
+    subtype: Female
+    mpn: DT06-3Ss
+    manufacturer: TE Connectivity
+    pins: [A, B, C]
+    pinlabels: [GND, PWM, 12V]
+    notes: Crimps 794606-1
+    image: 
+      src: DT06-3Ss.png
+      width: 100
+
+# ----------------------------------------------------------- #
+#                      CABLE LENGTHS                          #
+# ----------------------------------------------------------- #
+
+cables: 
+  ECU-AMS:
+    category: bundle
+    gauge: 22 awg
+    length: 1.25 m
+    colors: [VT, VT, VT, VT]
+    wirecount: 4
+  ECU-AMS-LOW-GAUGE:
+    category: bundle
+    gauge: 14 awg
+    length: 1.25 m
+    colors: [BK, RD, GN, YE]
+    wirecount: 4
+  AMS-RTM-LEDS:
+    category: bundle
+    gauge: 22 awg
+    length: 1.7 m
+    colors: [VT, VT]
+    wirecount: 2
+  AMS-RTM-LEDS-LOW-GAUGE:
+    category: bundle
+    gauge: 14 awg
+    length: 1.7 m
+    colors: [RD]
+    wirecount: 1
+  ECU-PEDDLEBOX:
+    category: bundle
+    gauge: 22 awg
+    length: 3.0 m
+    colors: [VT, VT, VT, VT]
+    wirecount: 4
+  ECU-PEDDLEBOX-LOW-GAUGE:
+    category: bundle
+    gauge: 14 awg
+    length: 3.0 m
+    colors: [RD, BK]
+    wirecount: 2
+  ECU-PEDDLEBOX-LOW-GAUGE-2:
+    category: bundle
+    gauge: 14 awg
+    length: 0.25 m
+    colors: [BK, RD]
+    wirecount: 2
+  ECU-PEDDLEBOX-LOW-GAUGE-3:
+    category: bundle
+    gauge: 14 awg
+    length: 0.25 m
+    colors: [BK, RD]
+    wirecount: 2
+  ECU-PEDDLEBOX-LOW-GAUGE-4:
+    category: bundle
+    gauge: 14 awg
+    length: 0.25 m
+    colors: [BK, RD]
+    wirecount: 2
+  ECU-COOLING:
+    category: bundle
+    gauge: 22 awg
+    length: 1.4 m
+    colors: [VT, VT, VT]
+    wirecount: 3
+  ECU-COOLING-MOTOR:
+    category: bundle
+    gauge: 22 awg
+    length: 0.75 m
+    colors: [VT]
+    wirecount: 1
+  ECU-COOLING-LOW-GAUGE:
+    category: bundle
+    gauge: 14 awg
+    length: 1.4 m
+    colors: [RD, BK]
+    wirecount: 2
+  ECU-BUZZER:
+    category: bundle
+    gauge: 22 awg
+    length: 0.25 m
+    colors: [VT]
+    wirecount: 1
+  ECU-BUZZER-LOW-GAUGE:
+    category: bundle
+    gauge: 14 awg
+    length: 0.25 m
+    colors: [RD]
+    wirecount: 1
+  ECU-BRAKELIGHT:
+    category: bundle
+    gauge: 22 awg
+    length: 1.7 m
+    colors: [VT]
+    wirecount: 1
+  ECU-BRAKELIGHT-LOW-GAUGE:
+    category: bundle
+    gauge: 14 awg
+    length: 1.7 m
+    colors: [RD]
+    wirecount: 1
+  ECU-MOTORCONTROLLER:
+    category: bundle
+    gauge: 20 awg
+    length: 0.6 m
+    colors: [RD, BK, BU, BU, BU, YE, GN]
+    wirecount: 7
+    shield: true
+  MOTORCONTROLLER-MOTORENCODER:
+    category: bundle
+    gauge: 22 awg
+    length: 1.3 m
+    colors: [VT, VT, VT, VT, VT, VT]
+    wirecount: 6
+  ECU-DASHBOARD:
+    category: bundle
+    gauge: 22 awg
+    length: 2.6 m
+    colors: [VT, VT, VT, VT, VT, VT, VT, VT]
+    wirecount: 8
+  ECU-DASHBOARD-LOW-GAUGE:
+    category: bundle
+    gauge: 14 awg
+    length: 2.6 m
+    colors: [RD, RD, BK]
+    wirecount: 3
+  ECU-GLVBATTERY:
+    category: bundle
+    gauge: 14 awg
+    length: 1.5 m
+    colors: [BK]
+    wirecount: 1
+  GLVMS-ECU:
+    category: bundle
+    gauge: 14 awg
+    length: 1.5 m
+    colors: [RD, BU]
+    wirecount: 2
+  GLVBATTERY-GLVMS:
+    category: bundle
+    gauge: 14 awg
+    length: 0.5 m
+    colors: [RD]
+    wirecount: 1
+  ECU-MOTORCONTROLLERINTERLOCK:
+    category: bundle
+    gauge: 18 awg
+    length: 0.1 m
+    colors: [BU]
+    wirecount: 1
+  MOTORCONTROLLERINTERLOCK-INERTIASWITCH:
+    category: bundle
+    gauge: 18 awg
+    length: 1.6 m
+    colors: [BU]
+    wirecount: 1
+  INERTIASWITCH-COCKPITSHUTDOWN:
+    category: bundle
+    gauge: 18 awg
+    length: 0.6 m
+    colors: [BU]
+    wirecount: 1
+  COCKPITSHUTDOWN-BOTS:
+    category: bundle
+    gauge: 18 awg
+    length: 1.2 m
+    colors: [BU]
+    wirecount: 1
+  BOTS-RIGHTSHUTDOWN:
+    category: bundle
+    gauge: 18 awg
+    length: 2.75 m
+    colors: [BU]
+    wirecount: 1
+  RIGHTSHUTDOWN-LEFTSHUTDOWN:
+    category: bundle
+    gauge: 18 awg
+    length: 1.0 m
+    colors: [BU]
+    wirecount: 1
+  LEFTSHUTDOWN-ACCUMULATORINTERLOCK:
+    category: bundle
+    gauge: 18 awg
+    length: 0.1 m
+    colors: [BU]
+    wirecount: 1
+  ACCUMULATORINTERLOCK-TSMS:
+    category: bundle
+    gauge: 18 awg
+    length: 1.5 m
+    colors: [BU]
+    wirecount: 1
+  TSMS-HVBOX:
+    category: bundle
+    gauge: 18 awg
+    length: 1.0 m
+    colors: [BU]
+    wirecount: 1
+  HVBOX-AMS:
+    category: bundle
+    gauge: 18 awg
+    length: 0.5 m
+    colors: [BU]
+    wirecount: 1
+  ECU-FAN1:
+    category: bundle
+    gauge: 16 awg
+    length: 1.0 m
+    colors: [RD, BK]
+    wirecount: 2
+  ECU-FAN2:
+    category: bundle
+    gauge: 16 awg
+    length: 0.5 m
+    colors: [RD, BK]
+    wirecount: 2
+  ECU-COOLINGPUMP:
+    category: bundle
+    gauge: 20 awg
+    length: 1.5 m
+    colors: [BU]
+    wirecount: 1
+  GLVBATTERY-COOLINGPUMP:
+    category: bundle
+    gauge: 14 awg
+    length: 1.5 m
+    colors: [BK]
+    wirecount: 1
+  GLVMS-COOLINGPUMP:
+    category: bundle
+    gauge: 14 awg
+    length: 1.5 m
+    colors: [RD]
+    wirecount: 1
+  AMS-RTM-LED:
+    category: bundle
+    gauge: 22 awg
+    length: 1.7 m
+    colors: [VT, VT]
+    wirecount: 2
+  ECU-TSS-RED:
+    category: bundle
+    gauge: 22 awg
+    length: 1.7 m
+    colors: [VT, RD]
+    wirecount: 2
+  ECU-TSS-GREEN:
+    category: bundle
+    gauge: 22 awg
+    length: 1.7 m
+    colors: [VT, GN]
+    wirecount: 2
+
+# ----------------------------------------------------------- #
+#                      CONNECTIONS                            #
+# ----------------------------------------------------------- #
+
+connections:
+  -
+    - ECU: [53, 54, 55, 49]
+    - ECU-AMS: [1, 2, 3, 4]
+    - AMS: [3, 6, 9, 10]
+  -
+    - ECU: [52, 56, 47, 48]
+    - ECU-AMS-LOW-GAUGE: [1, 2, 3, 4]
+    - AMS: [1, 2, 5, 7]
+  -
+    - AMS: [9, 11]               # RTM Light POS and NEG
+    - AMS-RTM-LEDS: [1, 2]
+    - RTM-Light: [B, A]          # Map POS to B, NEG to A
+  -
+    - AMS: [10]                  # HV Active Signal
+    - AMS-RTM-LEDS-LOW-GAUGE: [1]
+    - RTM-Light: [C]
+  -
+    - ECU: [2]
+    - ECU-PEDDLEBOX: [1]
+    - APPS1: [A]
+  -
+    - ECU: [1]
+    - ECU-PEDDLEBOX: [2]
+    - APPS2: [A]
+  -
+    - ECU: [4]
+    - ECU-PEDDLEBOX: [3]
+    - BRAKEPRESSURE1: [A]
+  -
+    - ECU: [3]
+    - ECU-PEDDLEBOX: [4]
+    - BRAKEPRESSURE2: [A]
+  -
+    - ECU: [5, 6]
+    - ECU-PEDDLEBOX-LOW-GAUGE: [1, 2]
+    - APPS1: [C, B]
+  -
+    - APPS1: [C, B]
+    - ECU-PEDDLEBOX-LOW-GAUGE-2: [2, 1]
+    - APPS2: [C, B]
+  -
+    - APPS2: [C, B]
+    - ECU-PEDDLEBOX-LOW-GAUGE-3: [2, 1]
+    - BRAKEPRESSURE1: [C, B]
+  -
+    - BRAKEPRESSURE1: [C, B]
+    - ECU-PEDDLEBOX-LOW-GAUGE-4: [2, 1]
+    - BRAKEPRESSURE2: [C, B]
+  -
+    - ECU: [9]
+    - ECU-COOLING: [1]
+    - COOLINGFLOW: [A]
+  -
+    - ECU: [10]
+    - ECU-COOLING: [2]
+    - COOLINGPRESSURE: [A]
+  -
+    - ECU: [11]
+    - ECU-COOLING: [3]
+    - COOLINGTEMP1: [A]
+  -
+    - ECU: [12]
+    - ECU-COOLING-MOTOR: [1]
+    - COOLINGTEMP2: [A]
+  -
+    - ECU: [7, 8]
+    - ECU-COOLING-LOW-GAUGE: [1, 2]
+    - COOLINGFLOW: [C, B]
+  -
+    - ECU: [7, 8]
+    - ECU-COOLING-LOW-GAUGE: [1, 2]
+    - COOLINGPRESSURE: [C, B]
+  -
+    - ECU: [7, 8]
+    - ECU-COOLING-LOW-GAUGE: [1, 2]
+    - COOLINGTEMP1: [C, B]
+  -
+    - ECU: [7, 8]
+    - ECU-COOLING-LOW-GAUGE: [1, 2]
+    - COOLINGTEMP2: [C, B]
+  -
+    - ECU: [26]
+    - ECU-BUZZER: [1]
+    - BUZZER: [2]
+  -
+    - ECU: [25]
+    - ECU-BUZZER-LOW-GAUGE: [1]
+    - BUZZER: [1]
+  -
+    - ECU: [28]
+    - ECU-BRAKELIGHT: [1]
+    - BRAKELIGHT: [2]
+  -
+    - ECU: [27]
+    - ECU-BRAKELIGHT-LOW-GAUGE: [1]
+    - BRAKELIGHT: [1]
+  -
+    - ECU: [46, 45, 44, 43, 42, 36, 35]
+    - ECU-MOTORCONTROLLER: [1, 2, 3, 4, 5, 6, 7]
+    - MOTORCONTROLLER: [M1, M4, L4, M2, L3, A2, B2]
+  -
+    - MOTORCONTROLLER: [G1]
+    - ECU-MOTORCONTROLLER: [s]
+  -
+    - MOTORCONTROLLER: [B1, A1, D1, C1, E1, F1]
+    - MOTORCONTROLLER-MOTORENCODER: [1, 2, 3, 4, 5, 6]
+    - MOTORENCODER: [Red, Black, Yellow, Blue, Red/ White, Black/ White]
+  -
+    # - ECU: [13, 15, 14, 16, 18, 17, 19, 20]
+    # - ECU-DASHBOARD: [1, 2, 3, 4, 5, 6, 7, 8]
+    # - DASHBOARD: [4, 5, 6, 7, 8, 9, 10, 11]
+#  -
+    # - ECU: [21, 22, 23]
+    # - ECU-DASHBOARD-LOW-GAUGE: [1, 2, 3]
+    # - DASHBOARD: [1, 2, 3]
+#  -
+    - ECU: [59]
+    - ECU-GLVBATTERY: [1]
+    - GLVBATTERY: [2]
+  -
+    - GLVBATTERY: [1]
+    - GLVBATTERY-GLVMS: [1]
+    - GLVMS: [1]
+  -
+    - GLVMS: [2,2]
+    - GLVMS-ECU: [1,2]
+    - ECU: [60, 51]
+  -
+    - ECU: [50]
+    - ECU-MOTORCONTROLLERINTERLOCK: [1]
+    - MOTORCONTROLLER: [J3]
+  -
+    - MOTORCONTROLLER: [J4]
+    - MOTORCONTROLLERINTERLOCK-INERTIASWITCH: [1]
+    - INERTIASWITCH: [1]
+  -
+    - INERTIASWITCH: [2]
+    - INERTIASWITCH-COCKPITSHUTDOWN: [1]
+    - COCKPITSHUTDOWN: [1]
+  -
+    - COCKPITSHUTDOWN: [2]
+    - COCKPITSHUTDOWN-BOTS: [1]
+    - BOTS: [1]
+  -
+    - BOTS: [2]
+    - BOTS-RIGHTSHUTDOWN: [1]
+    - RIGHTSHUTDOWN: [1]
+  -
+    - RIGHTSHUTDOWN: [2]
+    - RIGHTSHUTDOWN-LEFTSHUTDOWN: [1]
+    - LEFTSHUTDOWN: [1]
+  -
+    - LEFTSHUTDOWN: [2]
+    - LEFTSHUTDOWN-ACCUMULATORINTERLOCK: [1]
+    - ACCUMULATORINTERLOCK: [1]
+  -
+    - ACCUMULATORINTERLOCK: [2]
+    - ACCUMULATORINTERLOCK-TSMS: [1]
+    - TSMS: [1]
+  -
+    - TSMS: [2]
+    - TSMS-HVBOX: [1]
+    - HVBOX: [3]
+  -
+    - HVBOX: [4]
+    - HVBOX-AMS: [1]
+    - AMS: [8]
+  -
+    - ECU: [62, 58]
+    - ECU-FAN1: [1, 2]
+    - FAN1: [1, 2]
+  -
+    - ECU: [61, 57]
+    - ECU-FAN2: [1, 2]
+    - FAN2: [1, 2]
+  -
+    - ECU: [31]
+    - ECU-COOLINGPUMP: [1]
+    - COOLINGPUMP: [B]
+  -
+    - GLVBATTERY: [2]
+    - GLVBATTERY-COOLINGPUMP: [1]
+    - COOLINGPUMP: [A]
+  -
+    - GLVMS: [2]
+    - GLVMS-COOLINGPUMP: [1]
+    - COOLINGPUMP: [C]
+  -
+    - AMS: [9, 11]
+    - AMS-RTM-LED: [1, 2]
+    - RTM_LED: [1, 2]
+  -
+    - ECU: [32, 34]
+    - ECU-TSS-RED: [1, 2]
+    - TSS_LED_RED: [1, 2]
+  -
+    - ECU: [33, 34]
+    - ECU-TSS-GREEN: [1, 2]
+    - TSS_LED_GREEN: [1, 2]

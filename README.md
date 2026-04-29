@@ -1,4 +1,4 @@
 # DER26_LVHarness_unfinished
-fix the HVBox
+open the YMAL file, use AI for help, fix the HVBox connections, the HVBOX under connectors is accurate
 
 also download wireviz and graphviz to run this
